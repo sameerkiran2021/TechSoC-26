@@ -1,0 +1,69 @@
+#include<iostream>
+#include<string>
+#include<vector>
+#include<cmath>
+using namespace std;
+struct Moves{
+    string move;
+    int power;
+};
+class Bender{
+    public :
+    string name;
+    string type;
+    int HP; 
+    int Attack;
+    int Defense;
+    int Speed;
+    vector<Moves> move;
+    Bender(string n,string t,int health,int A,int D,int S,vector<Moves> m){
+      name=n;
+      type=t;
+      HP=health;
+      Attack=A;
+      Defense=D;
+      Speed=S;
+      move=m;
+      cout<<n<< " (" <<t<< ") HP: "<<health<<"/"<<health<< " | Attack: " <<A<<" | Defense: "<<D<< " | Speed: " <<S<<"\n";
+      for(int i=0;i<4;i++){
+        cout<<move[i].move<<" ("<< move[i].power<<") ";
+      }
+      cout<<"\n";
+    }
+   int dama(int a,int p,int d){
+     int damage;
+     damage=round((double)(a*p)/d);
+     return damage;}
+     int nhealth(int health,int damage){
+int newhealth=0;
+newhealth=health-damage;
+if(newhealth<0){
+    newhealth=0;
+}
+return newhealth;}
+void display_stats(int currenthp){
+     cout << name << " (" << type << ") HP: " << currenthp << "/" << HP 
+             << " | Attack: " << Attack << " | Defense: " << Defense << " | Speed: " << Speed << "\n";
+        for (int i = 0; i < 4; i++) {
+            cout << " - " << move[i].move << " (" << move[i].power << ")";
+        }
+        cout << "\n"<<"\n";
+  
+}};
+int main(){
+   // Create weak Zephyr
+ Bender Zephyr("Zephyr", "Air", 28, 12, 50, 95,
+               {{"Gust", 0}, {"Wind Slap", 18}, {"Tumble", 12}, {"Cyclone", 22}});
+    // Create strong Doran 
+ Bender Doran("Doran", "Earth", 145, 80, 75, 40,
+                 {{"Boulder Throw", 75}, {"Rock Fist", 42}, {"Tremor", 48}, {"Mountain Crush", 85}});
+    cout<<"Doran used Boulder Throw! \n";
+    cout<<"Zephyr took damage of:"<<Zephyr.dama(80,75,50)<<"\n";
+    int navinhp=Zephyr.nhealth(Zephyr.HP, Zephyr.dama(80,75,50));
+    Zephyr.display_stats(navinhp);
+    cout<<"Zephyr fainted.";
+
+   return 0;
+ 
+ }
+ 
