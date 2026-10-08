@@ -1,7 +1,3 @@
-//2D ARRAYS
-//TAKING FROM THE USER AND ALSO DISPLAYNG THE MAXIMUM SUM AMONGST ROWS.
-
-
  #include<iostream>
  #include<string>
  #include<vector>
@@ -9,76 +5,6 @@
  #include <cstdlib>
 #include <ctime> 
  using namespace std;
-//  #include<climits>   // FIX 1: Added for INT_MIN
-// #include<algorithm> // FIX 2: Added for max()
-// using namespace std;
-//  int maxsum(int matrix[][2],int sum){
-//     int maximumsum=INT_MIN;
-//  for(int i=0;i<2;i++){
-//     sum=0;
-//     for(int j=0;j<2;j++){
-//     sum=sum+matrix[i][j];
-//  }
-//   maximumsum=max(sum,maximumsum);
-//   }return maximumsum;}
-// int main(){
-//     int matrix[2][2];
-//     for(int i=0;i<2;i++){
-//      for(int j=0;j<2;j++){
-//      cout<<"Please Enter a number";
-//     cin>>matrix[i][j];
-//     }}
-//     for(int i=0;i<2;i++){
-//         for(int j=0;j<2;j++){
-//             cout<<matrix[i][j]<<" ";
-//         }
-//         cout<<"\n";
-//     }
-//     cout<<maxsum(matrix,0);
-// }
-
-// BENDER GAME
-//OOPS
-//ENCAPSULATION: IT IS WRAPPING UP OF DATA AND MEMBER FUNCTIONS IN A SINGLE UNIT CALLED CLASS
-// class Teacher{
-//   private:
-//     double salary;
-//     string password;
-//     public:
-//     Teacher(){
-//      cout<<"Hi this is a constructor.";}  // NAME OF CONSTRUCTOR SHOULD BE THE SAME AS NAME OF CLASS.
-//     Teacher(string n, int user){
-//        name=n;
-//        userid=user;
-//       }
-//      void Adress(){
-//       cout<<name;
-//        cout<<"\n"<<userid;}
-//      string name;
-//     int userid;
-// void teacher(string teach, int user){
-//     name = teach;
-//     userid = user;
-// }
-// string nameis(){
-//  return name;}
-//  int useridis(){
-//     return userid;
-//  }
-
-// };
-// int main(){
-//     Teacher t("Who",98); // Here first thing that will be printed is: Hi this is a constructor. //(look line number 230 if i insert another object like :Teacher t1; that constructor line will be printed twice. 
-//    t.name="Who";
-//    t.userid=98;
-//  cout<<t.nameis()<<"\n";
-//  cout<<t.useridis();
-//    t.Adress();
-  
-// }
-
-//CONSTRUCTOR:SPECIAL METHOD INVOKED AUTOMATICALLY AT THE TIME OF OBJECT CREATION. USED FOR INITIALISATION.
-
 struct Moves{
     string move;
     int power;
@@ -124,41 +50,17 @@ void display_stats(int currenthp){
             cout << " - " << move[i].move << " (" << move[i].power << ")";
         }
         cout << "\n"<<"\n";
-    // char naav;
-    // name=naav;
-    // cout<<naav<<" "<<naav.type<<" "<<naav.nhealth(28,120)<<"/"<<naav.HP<<naav.Attack<<naav.Defense<<naav.Speed<<"\n";
-    // for(int i=0;i<4;i++){
-    //     cout<<move[i].move<<" ("<< move[i].power<<") "<<"\n";
     }
 };
 int main(){
     srand(time(0)); 
-    cout<<"===Duel Begins===\n";
-   // Create weak Zephyr
-//  Bender Zephyr("Zephyr", "Air", 28, 12, 50, 95,
-//                {{"Gust", 0}, {"Wind Slap", 18}, {"Tumble", 12}, {"Cyclone", 22}});
-//     // Create strong Doran 
-//  Bender Doran("Doran", "Earth", 145, 80, 75, 40,
-//                  {{"Boulder Throw", 75}, {"Rock Fist", 42}, {"Tremor", 48}, {"Mountain Crush", 85}});
-    // cout<<"Doran used Boulder Throw! \n";
-    // cout<<"Zephyr took damage of:"<<Zephyr.dama(80,75,50)<<"\n";
-    // int navinhp=Zephyr.nhealth(Zephyr.HP, Zephyr.dama(80,75,50));
-    // Zephyr.display_stats(navinhp);
-    // cout<<"Zephyr fainted.";
-//  Bender Nadia("Nadia", "Water", 85, 48, 60, 72,
-//               {{"Wave Crash", 35}, {"Splash Kick", 25}, {"Guard", 0}, {"Riptide", 50}});
-
-//  Bender Talon("Talon", "Air", 90, 52, 55, 72,
-//               {{"Gale Strike", 38}, {"Wind Cutter", 28}, {"Updraft", 0}, {"Cyclone Blast", 48}});
+   
 vector<Bender> selection= {Bender{"Zephyr", "Air", 28, 12, 50, 95,
                {{"Gust", 0}, {"Wind Slap", 18}, {"Tumble", 12}, {"Cyclone", 22}}},
     // Create strong Doran 
  Bender("Doran", "Earth", 145, 80, 75, 40,
                  {{"Boulder Throw", 75}, {"Rock Fist", 42}, {"Tremor", 48}, {"Mountain Crush", 85}}),
-    // cout<<"Doran used Boulder Throw! \n";
-    // cout<<"Zephyr took damage of:"<<Zephyr.dama(80,75,50)<<"\n";
-    // int navinhp=Zephyr.nhealth(Zephyr.HP, Zephyr.dama(80,75,50));
-    // Zephyr.display_stats(navinhp);
+   
  Bender("Nadia", "Water", 85, 48, 60, 72,
               {{"Wave Crash", 35}, {"Splash Kick", 25}, {"Guard", 0}, {"Riptide", 50}}),
 
@@ -176,6 +78,8 @@ vector<Bender> selection= {Bender{"Zephyr", "Air", 28, 12, 50, 95,
  ptr2=&selection[p2-1];
 
  cout<<"Batlle is between "<<(*ptr1).name<<" and "<<(*ptr2).name<<"\n";
+  cout<<"===Duel Begins===\n";
+
  Bender *first_player ;
     Bender *second_player ;
 if((*ptr1).Speed>(*ptr2).Speed){
